@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 
-export const Form = () => {
+export const Form = ({ patient, setPatient }) => {
 
     const [ name, setName ] = useState('');
     const [ owner, setOwner ] = useState('');
@@ -23,6 +23,24 @@ export const Form = () => {
         }
 
         setError(false);
+
+        // Objeto de Paciente
+        const objectPatient = {
+            name, 
+            owner, 
+            email, 
+            date, 
+            symptoms
+        }
+
+        setPatient([ ...patient, objectPatient ]);
+
+        // Reiniciar el form
+        setName('');
+        setOwner('');
+        setEmail('');
+        setDate('');
+        setSymptoms('');
     }
     
     return (
