@@ -15,9 +15,9 @@ export const PatientList = ({ patient }) => {
                 <span className='text-indigo-600 font-bold'>Pacientes y Citas</span>
             </p>
 
-            { patient.map( ( patient, index ) => (
-                <Patient 
-                    key={ index }
+            { patient.map( patient => (
+                <Patient
+                    key={ patient.id }
                     patient={ patient }
                 />
             )) }
