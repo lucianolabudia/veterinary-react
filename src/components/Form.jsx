@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Error } from './Error';
 
 
-export const Form = ({ patient, setPatient }) => {
+export const Form = ({ patient, setPatient, editPatient }) => {
 
     const [ name, setName ] = useState('');
     const [ owner, setOwner ] = useState('');
@@ -11,6 +11,18 @@ export const Form = ({ patient, setPatient }) => {
     const [ symptoms, setSymptoms ] = useState('');
 
     const [ error, setError ] = useState(false);
+
+    useEffect( () => {
+        if ( Object.keys(editPatient).length > 0 ) {
+            setName(editPatient.name)
+            setOwner(editPatient.owner)
+            setEmail(editPatient.email)
+            setDate(editPatient.date)
+            setSymptoms(editPatient.symptoms)
+        } 
+
+    }, [editPatient] );    
+
 
     const generateId = () => {
         const random = Math.random().toString(36).substr(2);

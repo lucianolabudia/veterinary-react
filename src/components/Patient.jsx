@@ -1,6 +1,7 @@
-import React from 'react'
 
-export const Patient = ({ patient }) => {
+
+export const Patient = ({ patient, setEditPatient }) => {
+
 
     const { name, owner, email, date, symptoms } = patient;
 
@@ -33,6 +34,7 @@ export const Patient = ({ patient }) => {
                 <button 
                     type='button'
                     className='py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg'
+                    onClick={  () => setEditPatient( patient ) }
                 >
                     Editar
                 </button>
