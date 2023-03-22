@@ -18,7 +18,8 @@ function App() {
         <Form 
           patient={ patient }
           setPatient={ setPatient }
-          editPatient={ editPatient }          
+          editPatient={ editPatient }  
+          setEditPatient={ setEditPatient }        
         />
 
         <PatientList 

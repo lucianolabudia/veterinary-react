@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Error } from './Error';
 
 
-export const Form = ({ patient, setPatient, editPatient }) => {
+export const Form = ({ patient, setPatient, editPatient, setEditPatient }) => {
 
     const [ name, setName ] = useState('');
     const [ owner, setOwner ] = useState('');
@@ -50,11 +50,24 @@ export const Form = ({ patient, setPatient, editPatient }) => {
             owner, 
             email, 
             date, 
-            symptoms,
-            id: generateId()
+            symptoms
         }
+        
+        if ( editPatient.id ) {            
+            // Editando el Registro
+            objectPatient.id = editPatient.id;
 
-        setPatient([ ...patient, objectPatient ]);
+            const updatedPatients = patient.map(
+                patientState => patientState.id === editPatient.id ? objectPatient : patientState 
+            );
+
+            setPatient( updatedPatients );
+            setEditPatient({});
+        } else {            
+            // Nuevo Registro
+            objectPatient.id = generateId();
+            setPatient([ ...patient, objectPatient ]);
+        }
 
         // Reiniciar el form
         setName('');
