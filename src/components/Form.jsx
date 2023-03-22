@@ -152,7 +152,7 @@ export const Form = ({ patient, setPatient, editPatient }) => {
                 <input 
                     type="submit" 
                     className='bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors'
-                    value="Agregar Paciente"
+                    value={ editPatient.id ? 'Editar Paciente' : 'Agregar Paciente' }
                 />
 
             </form>
