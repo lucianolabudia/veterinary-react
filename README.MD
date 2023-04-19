@@ -14,3 +14,11 @@ La aplicación se desarrolló utilizando las siguientes tecnologías:
 
 
 [Link para utilizar la APP](https://jocular-tartufo-f7b5d6.netlify.app)
+
+## Imagenes de muestra:
+
+![veterinary-react1](https://user-images.githubusercontent.com/59026280/233166813-2b25038d-d97a-4c17-9fc7-7d17f871bac1.PNG)
+
+![veterinary-react2](https://user-images.githubusercontent.com/59026280/233166871-ffc25860-3a03-4e3b-97a6-5dcdaa33e468.PNG)
+
+
